@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,8 @@ Route::get('/about', function () {
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('blogs/{blog_id}/authors/{author_id}', [BlogController::class, 'blogDetail'])->name('blog-detail');
+
+
+Route::get('testing',[Controller::class,'testing'])->name('testing');
+
+Route::get('books',[BookController::class,'index'])->name('books');

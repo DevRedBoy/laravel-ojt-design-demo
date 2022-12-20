@@ -280,33 +280,19 @@
             <hr class="w-25 mx-auto bg-primary">
         </div>
         <div class="row g-5">
+            @foreach ($members as $member)
+
             <div class="col-lg-4">
                 <div class="team-item position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="{{url('asset/img/team-1.jpg')}}" alt="">
+                    <img class="img-fluid w-100" src="{{$member->photo}}" alt="">
                     <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                        <h3 class="text-white">Full Name</h3>
-                        <p class="text-white text-uppercase mb-0">Designation</p>
+                        <h3 class="text-white">{{$member->name}}</h3>
+                        <p class="text-white text-uppercase mb-0">{{$member->position}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="team-item position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="{{url('asset/img/team-2.jpg')}}" alt="">
-                    <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                        <h3 class="text-white">Full Name</h3>
-                        <p class="text-white text-uppercase mb-0">Designation</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="team-item position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="{{url('asset/img/team-3.jpg')}}" alt="">
-                    <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                        <h3 class="text-white">Full Name</h3>
-                        <p class="text-white text-uppercase mb-0">Designation</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
     <!-- Team End -->

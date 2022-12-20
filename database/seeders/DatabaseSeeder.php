@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Book;
+use App\Models\Publisher;
+use App\Models\TeamMember;
 use Illuminate\Database\Seeder;
+use Database\Seeders\AuthorSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,10 +20,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
+        // Publisher::factory(10)->create();
+                // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call([
+            AuthorSeeder::class,
+            CategorySeeder::class,
+        ]);
+
+        Publisher::factory()->count(100)->create();
+        Book::factory()->count(500)->create();
+        TeamMember::factory()->count(3)->create();
+
+
     }
 }
